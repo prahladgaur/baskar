@@ -17,7 +17,11 @@ app.use(cors(
 app.use(cookieParser())
 app.use('/auth',UserRouter)
 
-mongoose.connect('mongodb+srv://prahladgaur0711:Prahlad0711@cluster0.rzcxx5t.mongodb.net/authentication')
+mongoose.connect('mongodb+srv://prahladgaur0711:Prahlad0711@cluster0.rzcxx5t.mongodb.net/authentication');
+
+app.get("/", (req,res)=>{
+    res.json("hello")
+})
 
 app.listen(process.env.PORT,()=>{
     console.log("server is running")
